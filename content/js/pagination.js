@@ -9,11 +9,19 @@ fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=2&offset=${pageCou
     console.log(r);
     dataCount = r.count;
     let frag = '';
-    r["results"].forEach(item=>{
-        let card = cardTemplate(item);
-        frag += card;
-        document.querySelector('.tbody').innerHTML = frag;
-    })
+    if(r['results'] !== 0){
+       return  r["results"].forEach(item=>{
+            let card = cardTemplate(item);
+            frag += card;
+            document.querySelector('.tbody').innerHTML = frag;
+        })
+    }else{
+        return <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+        
+    }
+    
 })
 ///////////////////////////    prev
 
