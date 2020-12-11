@@ -73,4 +73,12 @@ function Toggle() {
    
    
 
-   
+//    SIGN OUT
+
+const signOutBtn = document.querySelector('.signOut');
+signOutBtn.addEventListener('click', e =>{
+    e.preventDefault();
+
+    localStorage.removeItem('neobisToken');
+    window.open('../../index.html', '_self');
+})
