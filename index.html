@@ -3,167 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neobis FMS</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
-	<link rel="icon" href="img/sign.png">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script>
-		$( function() {
-			$("#datepicker").datepicker({
-				dateFormat: 'yy-mm-dd'
-			});
-		} );
-		$( function() {
-			$( "#datepicker1" ).datepicker({
-				dateFormat: 'yy-mm-dd'
-			});
-		} );
-		$(window).on("load resize ", function() {
-		var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-		$('.tbl-header').css({'padding-right':scrollWidth});
-		}).resize();
-	</script>
+    <title>Authorization</title>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="https://use.fontawesome.com/ed06d06468.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="inline">
-                <div class="neo">
-                    <span>NEOBIS</span>
-                </div>
-                <ol>
-                    <li>
-                        <button class="dohod">
-                            <i class="fa fa-plus"></i>
-                            Доход   
-                        </button>
-                    </li>
-                    <li>
-                        <button class="expense">
-                            <i class="fa fa-minus"></i>
-                            Расход   
-                        </button>
-                    </li>
-                    <li>
-                        <button class="dohod">
-                            <i class=" fa fa-american-sign-language-interpreting"></i>
-                            Перевод   
-                        </button>
-                    </li>
-                </ol>
-                <ul>
-					<li> 
-                        <i class="fa fa-wrench"></i> 
-                        Настройки
-                    </li>
-				</ul>
+    <section>
+            <div class="welcome">
+                <h1>Добро пожаловать!</h1>
             </div>
-        </nav>
-    </header>
-    <section class="inlines"> 
-        <div>
-            <div id="sidebar" >
-                <ul class="ul mt-4">
-                    
-                </ul>
-            </div> 
-        </div>
-        <div class="element">
-            <article>
-                <ul>
-                    <li>
-                        <input type="text" id="datepicker"  placeholder="From">
-                    </li>	
-                    <i class="fa fa-angle-double-right" style="color: white;padding: 12px 0;"></i>
-                    <li>
-                        <input type="text" id="datepicker1" placeholder="To">
-                    </li>
-                    <i  id="data" class="fa fa-filter" style="color:lightblue;font-size:25px;padding:10px 0"></i>
-                    <li class="drop">
-                         Тип
-                        <ol>
-                        <li>
-                            <button id="all">Все</button>
-                        </li>
-                        <li>
-                            <button  id="plus">Доходы</button>
-                        </li>
-                        <li>
-                            <button id="minus">Расходы</button>
-                        </li>
-                        <li>
-                            <button id="perevod">Перевод</button>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    <button id="">Счет</button>
-                </li>
-                <li>
-                    <button>Контрaгент</button>
-                </li>
-            </ul>
-        </article>
-        <section class="main_journal">
-            <div class="journal">
-                <div id="container">
-                    <div class="tbl-header">
-                        <table >
-                            <thead>
-                                 <tr>
-                                    <th scope="col">Дата  <i class="fa fa-calendar"	></i></th>
-                                    <th scope="col">Тип </th>
-                                    <th scope="col">Сумма <i class="fa fa-dollar"></i></th>
-                                    <th scope="col">Счет</th>
-                                    <th scope="col">Контрагент </th>
-                                    <th scope="col">Категория</th>
-                                    <th scope="col">Проект</th>
-                                </tr>
-                            </thead>
-                             <tbody class="tbody"></tbody>	
-                       </table>
-                </div>
-                <nav aria-label="..." class="mt-4 ">
-                    <ul class="pagination pagination-md justify-content-center">
-                        <li class="page-item  " aria-current="page">
-                            <a href class="page-link " id="prev">
-                            <i class="fa fa-arrow-left"></i>
-                            <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" id="currentPage" >
-                            1</a>
-                        </li>
-                        <li class="page-item ">
-                            <a class="page-link" href="#" id="next"><i class="fa fa-arrow-right 2"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="img">
+                <img src="img/logo_neobis.png" alt="">
             </div>
-        </div>
+            <div class="form">
+                <form id="form" action="">
+                    <div>
+                        <i class="fa fa-user-circle"></i>
+                        <input id="email" type="email" placeholder="@Email">
+                    </div>
+                    <div>
+                        <i class="fa fa-lock"></i>
+                        <input id="password" type="password" placeholder="Password">
+                    </div>
+                    <div>
+                        <button type="submit">Sign in</button>
+                    </div>
+                </form>
+            </div>
     </section>
-</section>
-</div>
-<div class="dohod_cont">
-    <div class="output">
-    
-    </div>	
-</div>
-        
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/ed06d06468.js"></script>
-    <script src="js/script.js" defer></script>
-    <script src="js/expense.js" defer></script>
-    <script src="js/income.js" defer></script>
-    <script src="js/filter.js" defer></script>
-    <script src="js/date.js" defer></script>
-    <script src="js/pagination.js" defer></script>
+    <script src="js/form.js"></script>
 </body>
 </html>
