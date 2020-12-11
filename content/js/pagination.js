@@ -16,9 +16,11 @@ fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=2&offset=${pageCou
             document.querySelector('.tbody').innerHTML = frag;
         })
     }else{
-        return <div class="spinner-border text-success" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
+        return `
+            <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+             </div>
+        `
         
     }
     
