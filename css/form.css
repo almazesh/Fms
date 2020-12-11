@@ -26,3 +26,17 @@ form div input{
 form div i{
     font-size: 30px;
 }
+
+
+/* Validate */
+.validate ul{
+    padding: 0px;
+}
+.validate ul li{
+    color: rgb(230, 66, 66);
+    font-weight: bold;
+    font-size: 20px;
+}
+.validate{
+    text-align: center;
+}

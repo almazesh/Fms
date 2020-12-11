@@ -1,6 +1,7 @@
 const form = document.querySelector('#form');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
+const validateList = document.querySelector('.validateList');
 
 if(localStorage.getItem('neobisToken')){
     console.log('Вы уже авторизованы!')
@@ -24,9 +25,14 @@ form.addEventListener('submit', e =>{
     .then(r => {
         console.log(r);
         if(r.non_field_errors){
+            let frag = '';
             r.non_field_errors.forEach(err =>{
-                alert(err)
+                let card = `
+                    <li>${err}</li>
+                `;
+                frag += card;
             })
+            validateList.innerHTML = frag;
         }else if(r.token){
             localStorage.setItem('neobisToken', r.token);
             alert('Вы успешно зашли!')
