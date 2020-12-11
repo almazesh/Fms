@@ -16,15 +16,20 @@ fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=2&offset=${pageCou
             document.querySelector('.tbody').innerHTML = frag;
         })
     }else{
-        return `
-            <div class="spinner-border text-success" role="status">
-                <span class="visually-hidden">Loading...</span>
-             </div>
-        `
-        
+         let frags = '';
+         let spin = Spinner();
+         frags += spin;
+         document.querySelector('.tbody').innerHTML = frags;
     }
     
 })
+function Spinner(){
+    return `
+    <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+     </div>
+`
+}
 ///////////////////////////    prev
 
 prev.addEventListener('click', l=>{
