@@ -1,7 +1,7 @@
 // Is auth a user???
 
 if(!localStorage.getItem('neobisToken')){
-    console.log('Вы не авторизованы!')
+    alert('Вы не авторизованы!')
         window.open('../../index.html', '_self');
 }
 
