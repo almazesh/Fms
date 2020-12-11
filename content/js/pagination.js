@@ -9,27 +9,14 @@ fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=2&offset=${pageCou
     console.log(r);
     dataCount = r.count;
     let frag = '';
-    if(r['results'] !== ' '){
        return  r["results"].forEach(item=>{
             let card = cardTemplate(item);
             frag += card;
             document.querySelector('.tbody').innerHTML = frag;
         })
-    }else{
-         let frags = '';
-         let spin = Spinner();
-         frags += spin;
-         document.querySelector('.tbody').innerHTML = frags;
-    }
     
 })
-function Spinner(){
-    return `
-    <div class="spinner-border text-success" role="status">
-        <span class="visually-hidden">Loading...</span>
-     </div>
-`
-}
+
 ///////////////////////////    prev
 
 prev.addEventListener('click', l=>{
