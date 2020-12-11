@@ -1,3 +1,13 @@
+// Is auth a user???
+
+window.addEventListener('load', () =>{
+    if(!localStorage.getItem('neobisToken')){
+        console.log('Вы не авторизованы!')
+         window.open('../../index.html', '_self');
+    }
+})
+
+
 function Toggle() {
     document.querySelector('#sidebar').classList.toggle('active')
    }
@@ -65,9 +75,4 @@ function Toggle() {
    
    
 
-   window.addEventListener('load', () =>{
-       if(!localStorage.getItem('neobisToken')){
-           console.log('Вы не авторизованы!')
-            window.open('../../index.html', '_self');
-       }
-   })
+   
