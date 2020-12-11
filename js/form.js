@@ -29,7 +29,7 @@ form.addEventListener('submit', e =>{
             })
         }else if(r.token){
             localStorage.setItem('neobisToken', r.token);
-
+            alert('Вы успешно зашли!')
             window.open('./content/index.html', '_self');
         }
     })
