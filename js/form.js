@@ -2,6 +2,11 @@ const form = document.querySelector('#form');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 
+if(localStorage.getItem('neobisToken')){
+    console.log('Вы уже авторизованы!')
+    window.open('./content/index.html', '_self');
+}
+
 form.addEventListener('submit', e =>{
     e.preventDefault();
     
