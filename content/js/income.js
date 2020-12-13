@@ -12,30 +12,31 @@ const dohod = document.querySelector('.dohod');
 					<span onclick="Close()">&times;</span>
 				</div>
 				<div class="content_dohod">	
-					<form action=""> 
+					<form action="" > 
 						<div>
 							<input type="date" placeholder=""  class="dohod_input1" required="required">
 						</div>
 						<div>
-							<input type="text" placeholder="Доход" class="dohod_input2" required="">
+							<input type="text" placeholder="Категория" class="dohod_input2" required="">
 						</div>
 						<div>
 							<input type="number" placeholder="Сумма" class="dohod_input3" required="">
 						</div>
 						<div>
-							<input type="text" placeholder="Счет" class="dohod_input4" required="">
-						</div>
-						<div>
 							<input type="text" placeholder="Ваше имя" class="dohod_input5" required="">
 						</div>
 						<div>
-							<input type="text" placeholder="Категория: взнос и тд" class="dohod_input6" required="">
+							<input type="text" placeholder="Счет" class="dohod_input4" required="">
 						</div>
 						<div>
 							<input type="text" placeholder="Проект" class="dohod_input7" required="">
 						</div>
 						<div>
-							<button onclick="Dohod()" class="btn btn-outline-success add_dohod mb-3">Сохранить</button>
+							<input type="text" placeholder="Тип" class="dohod_input6" required="">
+						</div>
+						
+						<div>
+							<button  class="btn btn-outline-success  mb-3 " id="formBtn" onclick=Add()>Сохранить</button>
 						</div>
 					</form>
 				</div>
@@ -49,39 +50,44 @@ const dohod = document.querySelector('.dohod');
 		cad.remove()
 	}
 
-	function Dohod(){
-		let td = document.createElement('td');
-		let first = document.querySelector('.dohod_input1');
- 		const second = document.querySelector('.dohod_input2');
-		let three = document.querySelector('.dohod_input3');
-		let four = document.querySelector('.dohod_input4');
-		let five = document.querySelector('.dohod_input5');
-		let six = document.querySelector('.dohod_input6');
-		let seven = document.querySelector('.dohod_input7');
-		const objectGet = [
-			{
-				date: first.value,
-				type: second.value,
-				amount: three.value,
-				accounts: four.value,
-				counterparty: five.value,
-				categoryincome: six.value,
-				projects: seven.value
-			}
-		]
+		function Add(){
+			let date = document.querySelector('.dohod_input1');
+			const categoryincome = document.querySelector('.dohod_input2');
+			let amount = document.querySelector('.dohod_input3');
+			let accounts = document.querySelector('.dohod_input4');
+			let counterparty = document.querySelector('.dohod_input5');
+			let projects = document.querySelector('.dohod_input7');
+			let type = document.querySelector('.dohod_input6');
+			const formBtn = document.querySelector('#formBtn');
+			formBtn.addEventListener('click',t =>{
+				t.preventDefault();
 
-		document.querySelector('.tbody').appendChild(td)
-		let arr = objectGet
-		let frag = '';
-			arr.forEach(i =>{
-				let card = cardTemplate(i);
-				frag += card;
-				 document.querySelector('.tbody').innerHTML = frag;
+			if(date !== '' && categoryincome !== '' && amount !== '' && accounts !== '' && counterparty !== '' &&  projects !== '' && type !== '' )
+			fetch('http://neobisfms.herokuapp.com/api/income/',{
+				method: 'POST',
+				headers:{
+					'Content-Type':'application/json'
+				},
+				body:JSON.stringify({
+					date:date.value,
+					categoryincome:categoryincome.value,
+					amount:amount.value,
+					counterparty:counterparty.value,
+					accounts:accounts.value,
+					projects:projects.value,
+					type:type.value,
+					
+					
+					
+				
+				})
 			})
-			let n = JSON.stringify(arr);
-			localStorage.getItem('getincome')
-			localStorage.setItem('getincome',n)
-			console.log(n);
-			let t = JSON.parse(n)
-			console.log(t);
-	}
+			.then(res => res.json())
+			.then(o=>{
+				console.log(o)
+				
+			})
+			
+		})
+
+		}
