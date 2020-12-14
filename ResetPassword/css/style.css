@@ -1,0 +1,23 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: #32B482;
+}
+.flex{
+    display: flex;
+    justify-content: center;    
+    margin: 200px 0;
+    text-align: center;
+    
+}
+.card{
+    width: 30%;
+    margin: 0 auto;
+}
+.form-control{
+    width: 100% !important;
+}
+.card-body h1{
+    font-size: 20px;
+    color: gainsboro;
+}

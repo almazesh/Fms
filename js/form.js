@@ -43,3 +43,10 @@ form.addEventListener('submit', e =>{
         console.log(err);
     })
 })
+
+
+const reset = document.querySelector('.reset');
+reset.addEventListener('click',e=>{
+    e.preventDefault();
+    window.open('../ResetPassword/index.html', '_self')
+})
