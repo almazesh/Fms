@@ -1,7 +1,7 @@
 const form = document.querySelector('.form');
 const reset = document.querySelector('.resetInput');
 
-form.addEventListener('submit',e=>{
+form.addEventListener('click',e=>{
     e.preventDefault();
     fetch('http://neobisfms.herokuapp.com/api/user/reset-password/',{
         method:'POST',
