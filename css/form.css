@@ -77,3 +77,11 @@ form div i{
         padding-left: 20px;
     }
 }
+
+.forgot{
+    margin-top: 50px;
+}
+.forgot a{
+    color: white;
+    text-decoration: underline;
+}
