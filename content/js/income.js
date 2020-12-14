@@ -1,68 +1,67 @@
 const dohod = document.querySelector('.dohod');
-	dohod.addEventListener('click',er=>{
-		er.preventDefault();
-		let card = Card();
-		document.querySelector('.output').innerHTML = card;
-	})
-	function Card(box){
-		return `
-			<div class="cards">
-				<div class="top">
-					<p>Добавить доход</p>
-					<span onclick="Close()">&times;</span>
-				</div>
-				<div class="content_dohod">	
-					<form action="" > 
-						<div>
-							<input type="date" placeholder=""  class="dohod_input1" required="required">
-						</div>
-						<div>
-							<input type="text" placeholder="Категория" class="dohod_input2" required="">
-						</div>
-						<div>
-							<input type="number" placeholder="Сумма" class="dohod_input3" required="">
-						</div>
-						<div>
-							<input type="text" placeholder="Ваше имя" class="dohod_input5" required="">
-						</div>
-						<div>
-							<input type="text" placeholder="Счет" class="dohod_input4" required="">
-						</div>
-						<div>
-							<input type="text" placeholder="Проект" class="dohod_input7" required="">
-						</div>
-						<div>
-							<input type="text" placeholder="Тип" class="dohod_input6" required="">
-						</div>
-						
-						<div>
-							<button  class="btn btn-outline-success  mb-3 " id="formBtn" onclick=Add()>Сохранить</button>
-						</div>
-					</form>
-				</div>
+dohod.addEventListener('click',er=>{
+	er.preventDefault();
+	let card = Card();
+	document.querySelector('.output').innerHTML = card;
+})
+function Card(box){
+	return `
+		<div class="cards">
+			<div class="top">
+				<p>Добавить доход</p>
+				<span onclick="Close()">&times;</span>
 			</div>
-		`
-		
+			<div class="content_dohod">	
+				<form action="" class=""> 
+					<div>
+						<input type="date" placeholder=""  class="data" required="required">
+					</div>
+					<div>
+						<input type="text" placeholder="Категория" class="categoryincome" required="">
+					</div>
+					<div>
+						<input type="number" placeholder="Сумма" class="amount" required="">
+					</div>
+					<div>
+						<input type="text" placeholder="Ваше имя" class="counterparty" required="">
+					</div>
+					<div>
+						<input type="text" placeholder="Счет" class="accounts" required="">
+					</div>
+					<div>
+						<input type="text" placeholder="Проект" class="projects" required="">
+					</div>
+					<div>
+						<input type="text" placeholder="Тип" class="type" required="">
+					</div>
+					
+					<div>
+						<button   class="formBtn btn btn-outline-success  mb-3 " onclick=Add()>Добавить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	`	
+	
 
-    }
-    function Close(){
-		const cad = document.querySelector('.cards');
-		cad.remove()
-	}
-
-		function Add(){
-			let date = document.querySelector('.dohod_input1');
-			const categoryincome = document.querySelector('.dohod_input2');
-			let amount = document.querySelector('.dohod_input3');
-			let accounts = document.querySelector('.dohod_input4');
-			let counterparty = document.querySelector('.dohod_input5');
-			let projects = document.querySelector('.dohod_input7');
-			let type = document.querySelector('.dohod_input6');
-			const formBtn = document.querySelector('#formBtn');
-			formBtn.addEventListener('click',t =>{
-				t.preventDefault();
-
-			if(date !== '' && categoryincome !== '' && amount !== '' && accounts !== '' && counterparty !== '' &&  projects !== '' && type !== '' )
+}
+function Close(){
+	const cad = document.querySelector('.cards');
+	cad.remove()
+}
+function Add(){
+	let date = document.querySelector('.data');
+	const categoryincome = document.querySelector('.categoryincome');
+	let amount = document.querySelector('.amount');
+	let accounts = document.querySelector('.accounts');
+	let counterparty = document.querySelector('.counterparty');
+	let projects = document.querySelector('.projects');
+	let type = document.querySelector('.type');
+	const formBtn = document.querySelector('.formBtn');
+	formBtn.addEventListener('click',t =>{
+		t.preventDefault();
+		console.log(amount.value)
+		if(date !== '' && categoryincome !== '' && amount !== '' && accounts !== '' && counterparty !== '' &&  projects !== '' && type !== '' ){
 			fetch('http://neobisfms.herokuapp.com/api/income/',{
 				method: 'POST',
 				headers:{
@@ -76,10 +75,6 @@ const dohod = document.querySelector('.dohod');
 					accounts:accounts.value,
 					projects:projects.value,
 					type:type.value,
-					
-					
-					
-				
 				})
 			})
 			.then(res => res.json())
@@ -87,7 +82,6 @@ const dohod = document.querySelector('.dohod');
 				console.log(o)
 				
 			})
-			
-		})
-
 		}
+	})
+}

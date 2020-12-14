@@ -35,7 +35,7 @@ function Cards(){
                     <input type="text" placeholder="Проект" class="dohod_input7" required="">
                 </div>
                 <div>
-                    <button onclick="Dohod()" class="btn btn-outline-danger add_dohod mb-3">Сохранить</button>
+                    <button onclick="Dohod()" class="btn btn-outline-danger add_dohod mb-3">Добавить</button>
                 </div>
             </form>
         </div>
