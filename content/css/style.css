@@ -256,42 +256,7 @@ article ul li input{
   justify-content: center;
   align-items: center;
 }
-.cards{
-  position: absolute;
-  top: 150px;
-  background: white;
-  box-shadow: 0 5px 10px gainsboro;
-  width: 400px;
-  height: 400px;
-  left: 500px;
-  color: green;
-  padding-top: 10px;
-  overflow: auto;
-}
-.top{
-  padding: 5px 20px;
-  display: flex;
-  justify-content: space-between  ;
-}
-.content_dohod{
-  width: 80%;
-  margin: 0 auto;
-}
 
-.content_dohod form input{
-  width: 100%;
-  height: 40px;
-  margin: 5px 0;
-  padding-left: 10px;
-  border-radius: 5px;
-  border:1px solid gainsboro;
-}
-.content_dohod form input:active{
-  outline-color:#32B482;
-}
-.content_dohod form button{
-  width: 100%;
-}
 /* TABLE CSS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111 */
   
   #container {

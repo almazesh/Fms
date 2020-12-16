@@ -1,0 +1,49 @@
+.cards{
+    border:1px solid gainsboro;
+    width: 400px;
+    height: 500px;
+    margin: 100px auto;
+    color: green;
+    padding-top: 10px;
+    border-radius: 10px;
+  }
+  .top{
+    padding: 5px 20px;
+    text-align: center;
+  }
+  .content_dohod{
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .content_dohod form input{
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    padding-left: 10px;
+    border-radius: 5px;
+    border:1px solid gainsboro;
+  }
+  .content_dohod form select{
+    background: none;
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    padding-left: 10px;
+    border-radius: 5px;
+    border:1px solid gainsboro;
+  }
+  .content_dohod form select option{
+    background: none;
+    width: 20%;
+    height: 40px;
+    margin: 5px 0;
+    padding-left: 10px;
+    border-radius: 5px;
+  }
+  .content_dohod form input:active{
+    outline-color:#32B482;
+  }
+  .content_dohod form button{
+    width: 100%;
+  }
