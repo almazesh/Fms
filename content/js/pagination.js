@@ -3,7 +3,7 @@ const prev = document.querySelector('#prev');
 let pageCounter = 0;
 let dataCount;
 
-fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=2&offset=${pageCounter}`)
+fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`)
 .then(content => content.json())
 .then(r=>{
     console.log(r);
@@ -27,7 +27,7 @@ prev.addEventListener('click', l=>{
         pageCounter = 0;
     }
     l.preventDefault();
-    fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=2&offset=${pageCounter}`)
+    fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`)
     .then(p => p.json())
     .then(g =>{
         console.log(g);
@@ -51,7 +51,7 @@ next.addEventListener('click',j=>{
         pageCounter = dataCount - 1;
     }
     j.preventDefault();
-    fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=2&offset=${pageCounter}`)
+    fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`)
     .then(u => u.json())
     .then(h =>{
         let temp = '';
