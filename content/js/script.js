@@ -81,3 +81,9 @@ signOutBtn.addEventListener('click', e =>{
     localStorage.removeItem('neobisToken');
     window.open('../../index.html', '_self');
 })
+
+const perevods = document.querySelector('.transfer');
+perevods.addEventListener('click',e=>{
+    e.preventDefault();
+    window.open('transfer/index.html','_self')
+})
