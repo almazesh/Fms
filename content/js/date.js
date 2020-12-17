@@ -28,6 +28,7 @@ data.addEventListener('click',y=>{
 			}else{
 				document.querySelector('.tbody').innerHTML = "<h1 class='notFound'>Ничего не найдено!</h1>";
 			} 
+			
 		})
 	}else{
 		alert("Не все поля заполнены!")
