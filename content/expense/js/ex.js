@@ -31,9 +31,13 @@ form.addEventListener('submit', e =>{
         .then(res => res.json())
         .then(o=>{
             console.log(o);
-            alert('Успешно добавлено!')
+            document.querySelector('.done').innerHTML = `<p class="text-success">Добавлено</p>`
         })
-
+        .then(() =>{
+           setTimeout(()=>{
+            window.open('../index.html', '_self');
+           },3000)
+        })
         .catch(err =>{
             console.err(err);
         })

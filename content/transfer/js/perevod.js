@@ -19,14 +19,19 @@ form.addEventListener('submit',e=>{
             type:'3'
         })
     })
-    .then(res =>res.json())
-    .then(g=>{
-        console.log(g)
-        alert('Успешно добавлено!')
-    })
-    .then(()=>{
-        window.open(' ../index.html')
-    })
+    .then(res => res.json())
+        .then(o=>{
+            console.log(o);
+            document.querySelector('.done').innerHTML = `<p class="text-success">Добавлено</p>`
+        })
+        .then(() =>{
+           setTimeout(()=>{
+            window.open('../index.html', '_self');
+           },3000)
+        })
+        .catch(err =>{
+            console.err(err);
+        })
 })
 fetch('http://neobisfms.herokuapp.com/api/data/accounts/')
 .then(res => res.json())
