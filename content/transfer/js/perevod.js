@@ -17,7 +17,6 @@ form.addEventListener('submit',e=>{
             accounts:+accounts.value,
             send_to:send.value,
             type:'3'
-
         })
     })
     .then(res =>res.json())
@@ -28,10 +27,7 @@ form.addEventListener('submit',e=>{
     .then(()=>{
         window.open(' ../index.html')
     })
-    
 })
-
-
 fetch('http://neobisfms.herokuapp.com/api/data/accounts/')
 .then(res => res.json())
 .then(h=>{
@@ -49,6 +45,5 @@ function Card(card){
         <option value=${card.id}>
             ${card.type}
         </option>
-
     `
 }

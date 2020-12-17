@@ -33,9 +33,7 @@ form.addEventListener('submit', e =>{
             console.log(o);
             alert('Успешно добавлено!')
         })
-        .then(() =>{
-            window.open('../../index.html', '_self');
-        })
+
         .catch(err =>{
             console.err(err);
         })

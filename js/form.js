@@ -35,7 +35,6 @@ form.addEventListener('submit', e =>{
             validateList.innerHTML = frag;
         }else if(r.token){
             localStorage.setItem('neobisToken', r.token);
-            alert('Вы успешно зашли!')
             window.open('./content/index.html', '_self');
         }
     })
