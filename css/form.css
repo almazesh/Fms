@@ -12,22 +12,24 @@ body{
     margin: 100px 0;
 }
 form {
-    width: 25%; 
+    width: 50%; 
     margin: 0  auto;
 }
-form div input{
-    width: 100%;
+form input   {
+    width: 300px;
     margin: 20px 0;
     padding: 15px 0;    
     border:0;
     border-radius: 20px;
     outline: 0;
-    padding-left: 20px;
+    padding-left: 40px;
 }
-form div i{
+form  i{
     font-size: 30px;
+    position: relative;
+    left: 30px;
+    color: grey;
 }
-
 
 /* Validate */
 .validate ul{
@@ -47,37 +49,85 @@ form div i{
         width: 50%; 
         margin: 0  auto;
     }
-    form div input{
-        width: 100%;
+    form  input{
+        width: 300px;
         margin: 20px 0;
         padding: 15px 0;    
         border:0;
         border-radius: 20px;
         outline: 0;
-        padding-left: 20px;
+        padding-left: 40px;
+    }
+    form  i{
+        font-size: 30px;
+        position: relative;
+        left: 30px;
+        color: grey;
     }
 }
-@media (max-width:338px){
-    .welcome{
-        font-size: 30px;
-        margin-top: 50px ;
-        margin-bottom: 50px;
-    }
+@media  (max-width:612px){
     form {
-        width: 70%; 
+        width: 50%; 
         margin: 0  auto;
     }
-    form div input{
-        width: 100%;
+    form  input{
+        width: 200px;
         margin: 20px 0;
         padding: 15px 0;    
         border:0;
         border-radius: 20px;
         outline: 0;
-        padding-left: 20px;
+        padding-left: 40px;
+    }
+    form  i{
+        font-size: 30px;
+        position: relative;
+        left: 30px;
+        color: grey;
     }
 }
-
+@media (max-width:622px){
+    form {
+        width: 100%; 
+        margin: 0  auto;
+    }
+    form  input{
+        width: 200px;
+        margin: 20px 0;
+        padding: 15px 0;    
+        border:0;
+        border-radius: 20px;
+        outline: 0;
+        padding-left: 40px;
+    }
+    form  i{
+        font-size: 30px;
+        position: relative;
+        left: 30px;
+        color: grey;
+    }
+}
+@media (max-width:429px){
+    form {
+        width: 100%; 
+        margin: 0  auto;
+    }
+    form  input{
+        width: 300px;
+        margin: 20px 0;
+        padding: 15px 0;    
+        border:0;
+        border-radius: 20px;
+        outline: 0;
+        padding-left: 40px;
+    }
+    form  i{
+        font-size: 30px;
+        position: relative;
+        left: 30px;
+        color: grey;
+    }
+}
 .forgot{
     margin-top: 50px;
 }
