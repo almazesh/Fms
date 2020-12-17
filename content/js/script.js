@@ -64,9 +64,9 @@ function Toggle() {
    })
    function TotalCard(tr){
        return `
-           <li class="mt-4">TotalIncome: ${tr.totalincome}</li>
-           <li class="mt-4">TotalExpense: ${tr.totalexpense}</li>
-           <li class="mt-4">TotalAmount: ${tr.totalamount}</li>
+           <li class="mt-4">Общий доход: ${tr.totalincome}</li>
+           <li class="mt-4">Общий расход: ${tr.totalexpense}</li>
+           <li class="mt-4">Общий перевод: ${tr.totalamount}</li>
        `
    }
    

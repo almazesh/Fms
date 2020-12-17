@@ -61,3 +61,74 @@ perevod.addEventListener('click',ev=>{
 			document.querySelector('.tbody').innerHTML = frags;
 		})
 	})
+	const demir = document.querySelector('#demir');
+	demir.addEventListener('click',ec=>{
+		ec.preventDefault();
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		.then(hopes => hopes.json())
+		.then(v =>{
+			let frags = '';
+			v['results'].forEach(items=>{
+				let cards = cardTemplate(items);
+					if(items.accounts === 'Демир банк'){
+						frags += cards;
+					}
+			})
+			document.querySelector('.tbody').innerHTML = frags;
+		})
+	})
+	const elsom = document.querySelector('#elsom');
+	elsom.addEventListener('click',ec=>{
+		ec.preventDefault();
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		.then(hopes => hopes.json())
+		.then(v =>{
+			let frags = '';
+			v['results'].forEach(items=>{
+				let cards = cardTemplate(items);
+					if(items.accounts === "Elsom"){
+						frags += cards;
+					}
+			})
+			document.querySelector('.tbody').innerHTML = frags;
+		})
+	})
+
+	
+	
+
+	const ali = document.querySelector('#ali');
+	ali.addEventListener('click',ec=>{
+		ec.preventDefault();
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		.then(hopes => hopes.json())
+		.then(v =>{
+			let frags = '';
+			v['results'].forEach(items=>{
+				let cards = cardTemplate(items);
+					if(items.counterparty === "Али"){
+						frags += cards;
+					}
+			})
+			document.querySelector('.tbody').innerHTML = frags;
+		})
+	})
+		
+
+	const no = document.querySelector('#no');
+	no.addEventListener('click',ec=>{
+		ec.preventDefault();
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		.then(hopes => hopes.json())
+		.then(v =>{
+			let frags = '';
+			v['results'].forEach(items=>{
+				let cards = cardTemplate(items);
+					if(items.counterparty === "No partner"){
+						frags += cards;
+					}
+			})
+			document.querySelector('.tbody').innerHTML = frags;
+		})
+	})
+
