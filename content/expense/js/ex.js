@@ -12,19 +12,19 @@ const form = document.querySelector('#form');
 form.addEventListener('submit', e =>{
     e.preventDefault();
     if(date !== '' && categoryincome !== '' && amount !== '' && acc !== '' && counterparty !== '' &&  projects !== '' && type !== '' ){
-        fetch('http://neobisfms.herokuapp.com/api/income/',{
+        fetch('http://neobisfms.herokuapp.com/api/expense/',{
             method: 'POST',
             headers:{
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({
                 date:date.value,
-                categoryincome: +categoryincome.value,
+                categoryexpense: +categoryincome.value,
                 amount:amount.value,
                 counterparty:counterparty.value,
                 accounts: +acc.value,
                 projects:projects.value,
-                type: "1",
+                type: "2",
             })
 
         })
@@ -63,7 +63,7 @@ function Card(card){
 
     `
 }
-fetch('http://neobisfms.herokuapp.com/api/income/categoryofincome/')
+fetch('http://neobisfms.herokuapp.com/api/expense/categoryofexpense/')
 .then(res => res.json())
 .then(l=>{
     console.log(l)

@@ -10,42 +10,46 @@
 <body>
     <div class="cards">
         <div class="top">
-            <p style="color:red">Добавить Расход</p>
+            <p style="color:red">Добавить расход</p>
         </div>
         <div class="content_dohod">	
-            <form action="" class=""> 
+            <form id="form" action="" class=""> 
                 <div>
                     <input type="date" placeholder=""  class="data" required="required">
                 </div>
                 <div>
-                    <select>
-                        <option>
-                             CategoryofExpense
-                        </option>
+                    <select class="category">
+                        
                     </select>
                 </div>
                 <div>
                     <input type="number" placeholder="Сумма" class="amount" required="">
                 </div>
                 <div>
-                    <input type="text" placeholder="Ваше имя" class="counterparty" required="">
+                    <select class="counterparty">
+
+                    </select>
                 </div>
                 <div>
-                    <input type="text" placeholder="Счет" class="accounts" required="">
+                    <select id="accounts">
+                        
+                    </select>
                 </div>
                 <div>
-                    <input type="text" placeholder="Проект" class="projects" required="">
+                    <select class="projects">
+                        
+                    </select>
                 </div>
                 <div>
-                    <input type="text" disabled placeholder="Расходы" class="type" required="">
+                    <input type="text" placeholder="Расход" class="type" disabled required="">
                 </div>
                 
                 <div>
-                    <button   class="formBtn btn btn-outline-danger  mb-3 " onclick=Adds()>Добавить</button>
+                    <button type="submit" class="formBtn btn btn-outline-success mb-3 ">Добавить</button>
                 </div>
             </form>
         </div>
     </div>
-    <script src="../js/expense.js" defer></script>
+    <script src="js/ex.js" defer></script>
 </body>
 </html>
