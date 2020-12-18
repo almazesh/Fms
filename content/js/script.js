@@ -131,9 +131,15 @@ form_opt.addEventListener('click',er=>{
     }
     if(opt_email.value === objects.emails && opt_pssw.value === objects.passwords){
         window.open('options/index.html','_self');
-        fc.style.top = '-250' + 'px';
+        fc.style.top = '-300' + 'px';
     }
     else{
         alert('Доступ только админу!')
     }
+})
+
+const closee = document.querySelector('.close');
+closee.addEventListener('click',e=>{
+    e.preventDefault()
+    fc.style.top = '-300' + 'px';
 })
