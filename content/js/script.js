@@ -5,6 +5,7 @@ if(!localStorage.getItem('neobisToken')){
 }
 
 
+
 function Toggle() {
     document.querySelector('#sidebar').classList.toggle('active')
    }
@@ -51,7 +52,12 @@ function Toggle() {
    }
    
    ///////////total
-   fetch('http://neobisfms.herokuapp.com/api/gettotal/')
+   fetch('http://neobisfms.herokuapp.com/api/gettotal/', {
+       method: 'GET',
+       headers: {
+           'Token': '5509e8825b45fc4fb14e6a07e0e9398af9c66cf1'
+       }
+   })
    .then(tr=> tr.json())
    .then(t =>{
        let frag = '';
@@ -78,15 +84,22 @@ const signOutBtn = document.querySelector('.signOut');
 signOutBtn.addEventListener('click', e =>{
     e.preventDefault();
 
-    localStorage.removeItem('neobisToken');
-    window.open('../../index.html', '_self');
+    if(localStorage.getItem('neobisToken')){
+        localStorage.removeItem('neobisToken');
+        window.open('../../index.html', '_self');
+    }
 })
+
+
 
 const perevods = document.querySelector('.transfer');
 perevods.addEventListener('click',e=>{
     e.preventDefault();
     window.open('transfer/index.html','_self')
 })
+
+
+
 
 const options = document.querySelector('.Opt');
 let out = document.querySelector('.output');
@@ -110,7 +123,7 @@ form_opt.addEventListener('click',er=>{
         passwords:'SaniraAdmin' 
     }
     if(opt_email.value === objects.emails && opt_pssw.value === objects.passwords){
-        window.open('options/index.html','_self')
+        window.open('options/index.html','_self');
         fc.style.top = '-250' + 'px';
     }
     else{

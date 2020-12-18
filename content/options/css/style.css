@@ -91,3 +91,12 @@ aside{
     font-size: 20px;
    
 }
+.reg{
+    text-align: center;
+    color: white;
+    padding-top: 25px;
+}
+.reg a{
+    color: white;
+    font-size: 20px;
+}

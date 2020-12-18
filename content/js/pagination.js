@@ -3,7 +3,12 @@ const prev = document.querySelector('#prev');
 let pageCounter = 0;
 let dataCount;
 
-fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`)
+fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`, {
+    method: 'GET',
+    headers: {
+        'Token': '5509e8825b45fc4fb14e6a07e0e9398af9c66cf1'
+    }
+})
 .then(content => content.json())
 .then(r=>{
     console.log(r);

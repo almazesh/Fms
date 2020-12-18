@@ -113,3 +113,9 @@ exit.addEventListener('click',t=>{
     t.preventDefault();
     window.open('../index.html','_self')
 })
+
+const news = document.querySelector('.new_user');
+news.addEventListener('click',p=>{
+    p.preventDefault()
+    window.open('/Registration/index.html')
+})

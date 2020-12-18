@@ -5,7 +5,13 @@ data.addEventListener('click',y=>{
 	const datapicker = document.getElementById('datepicker');
 	const datapicker2 = document.getElementById('datepicker1');
 	if(datapicker2.value !== "" && datapicker.value !== ""){
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				'Token': '5509e8825b45fc4fb14e6a07e0e9398af9c66cf1'
+			}
+		})
 		.then(hopess => hopess.json())
 		.then(v =>{
 			data.addEventListener
