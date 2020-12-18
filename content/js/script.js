@@ -87,3 +87,29 @@ perevods.addEventListener('click',e=>{
     e.preventDefault();
     window.open('transfer/index.html','_self')
 })
+
+const options = document.querySelector('.Opt');
+let out = document.querySelector('.output');
+const fc = document.querySelector('.form-card')
+options.addEventListener('click',e=>{
+    e.preventDefault();
+    fc.style.top = '250' + 'px';
+})
+
+
+
+
+const opt_email = document.querySelector('.opt_email');
+const opt_pssw = document.querySelector('.opt_pssw');
+const form_opt = document.querySelector('.form_opt');
+form_opt.addEventListener('click',er=>{
+    er.preventDefault();
+    console.log(opt_email.value)
+    const objects = {
+        emails:'fin.mng.system1@gmail.com',
+        passwords:'SaniraAdmin' 
+    }
+    if(opt_email.value === objects.emails && opt_pssw.value === objects.passwords){
+        window.open('options/index.html')
+    }
+})

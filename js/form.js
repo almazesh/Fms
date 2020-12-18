@@ -43,7 +43,7 @@ form.addEventListener('submit', e =>{
     })
 })
 
-
+    
 const reset = document.querySelector('.reset');
 reset.addEventListener('click',e=>{
     e.preventDefault();
