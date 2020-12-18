@@ -6,10 +6,3 @@ dohod.addEventListener('click',er=>{
 })
 
 
-function Close(){
-	const cad = document.querySelector('.cards');
-	cad.remove()
-}
-
-
-

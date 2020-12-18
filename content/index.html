@@ -30,148 +30,157 @@
 	</script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="inline">
-                <div class="neo">
-                    <span>NEOBIS</span>
-                </div>
-                <ol>
-                    <li>
-                        <button class="dohod">
-                            <i class="fa fa-plus"></i>
-                            Доход   
-                        </button>
-                    </li>
-                    <li>
-                        <button class="expense">
-                            <i class="fa fa-minus"></i>
-                            Расход   
-                        </button>
-                    </li>
-                    <li>
-                        <button class="transfer">
-                            <i class="fa fa-american-sign-language-interpreting"></i>
-                            Перевод 
-                        </button>
-                    </li>
-                </ol>
-                <ul class="d-flex align-items-center">
-					<li > 
-                        <i class="fa fa-wrench"></i> 
-                       <a href="" class="Opt"> Настройки</a>
-                    </li>
-                    <li class="ml-4">
-                        <button  class="btn btn-outline-danger signOut">
-                            Выйти
-                        </button>
-                    </li>
-				</ul>
-            </div>
-        </nav>
-    </header>
+    
     <section class="inlines"> 
         <div>
             <div id="sidebar" >
+                <div class="neo">
+                    <span>NEOBIS</span>
+                </div>
                 <ul class="ul mt-4">
                     
                 </ul>
             </div> 
         </div>
         <div class="element">
-            <article>
-                <ul>
-                    <li>
-                        <input type="text" id="datepicker"  placeholder="С...">
-                    </li>	
-                    <i class="fa fa-angle-double-right" style="color: white;padding: 12px 0;"></i>
-                    <li>
-                        <input type="text" id="datepicker1" placeholder="До...">
-                    </li>
-                    <i  id="data" class="fa fa-filter" style="color:lightblue;font-size:25px;padding:10px 0"></i>
-                    <li class="drop">
-                         Тип
-                    <ol>
+            <header class="mb-3">
+                <nav>
+                    <div class="inline">
+                        <ol>
                             <li>
-                                <button id="all">Все</button>
+                                <button class="dohod btn btn-outline-success">
+                                    <i class="fa fa-plus"></i>
+                                    Доход   
+                                </button>
                             </li>
                             <li>
-                                <button  id="plus">Доходы</button>
+                                <button class="expense btn btn-outline-danger">
+                                    <i class="fa fa-minus"></i>
+                                    Расход   
+                                </button>
                             </li>
                             <li>
-                                <button id="minus">Расходы</button>
+                                <button class="transfer btn btn-outline-secondary">
+                                    <i class="fa fa-american-sign-language-interpreting"></i>
+                                    Перевод 
+                                </button>
                             </li>
-                            <li>
-                                <button id="perevod">Перевод</button>
-                                
+                         
+                        </ol>
+                        
+                        <ul class="d-flex align-items-center">
+                            <li > 
+                                <i class="fa fa-wrench text-dark"></i> 
+                               <a href="" class="Opt"> Настройки</a>
                             </li>
-                    </ol>
-                </li>
-                <li class="drop">
-                    Счет
-                  <ol>
-                       <li>
-                           <button id="demir">Демир Банк</button>
-                       </li>
-                       <li>
-                           <button  id="elsom">Элсом</button>
-                       </li>
-                       
-               </ol>
-           </li>
-           <li class="drop">
-            Контрагент
-                <ol>
-                    <li>
-                        <button id="ali">Али</button>
-                    </li>
-                    <li>
-                        <button  id="no">No partner</button>
-                    </li>
-                </ol>
-         </li>
-            </ul>
-        </article>
-        <section class="main_journal">
-            <div class="journal">
-                <div id="container">
-                    <div class="tbl-header">
-                        <table >
-                            <thead>
-                                 <tr>
-                                    <th scope="col">Дата  <i class="fa fa-calendar"	></i></th>
-                                    <th scope="col">Тип </th>
-                                    <th scope="col">Сумма <i class="fa fa-dollar"></i></th>
-                                    <th scope="col">Счет</th>
-                                    <th scope="col">Контрагент </th>
-                                    <th scope="col">Категория</th>
-                                    <th scope="col">Проект</th>
-                                </tr>
-                            </thead>
-                             <tbody class="tbody"></tbody>	
-                       </table>
-                </div>
-                <nav aria-label="..." class="mt-4 ">
-                    <ul class="pagination pagination-md justify-content-center">
-                        <li class="page-item  " aria-current="page">
-                            <a href class="page-link " id="prev">
-                            <i class="fa fa-arrow-left"></i>
-                            <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" id="currentPage" >
-                            1</a>
-                        </li>
-                        <li class="page-item ">
-                            <a class="page-link" href="#" id="next"><i class="fa fa-arrow-right 2"></i>
-                            </a>
-                        </li>
-                    </ul>
+                            <li class="ml-4">
+                                <button  class="btn btn-outline-danger signOut">
+                                    Выйти
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
+            </header>
+            <div class="carddd">
+                <article>
+                    <ul>
+                        <li>
+                            <input type="text" id="datepicker"  placeholder="С...">
+                        </li>	
+                        <i class="fa fa-angle-double-right" style="color: lightblue;padding: 12px 0;"></i>
+                        <li>
+                            <input type="text" id="datepicker1" placeholder="До...">
+                        </li>
+                        <i  id="data" class="fa fa-filter" style="color:lightblue;font-size:25px;padding:10px 0"></i>
+                        <li class="drop">
+                            <i class="fa fa-archive" ></i>
+                             Тип
+                        <ol>
+                                <li>
+                                    <button id="all">Все</button>
+                                </li>
+                                <li>
+                                    <button  id="plus">Доходы</button>
+                                </li>
+                                <li>
+                                    <button id="minus">Расходы</button>
+                                </li>
+                                <li>
+                                    <button id="perevod">Перевод</button>
+                                    
+                                </li>
+                        </ol>
+                    </li>
+                    <li class="drop">
+                        <i class="fa fa-address-card" "></i>
+                        Счет
+                      <ol>
+                           <li>
+                               <button id="demir">Демир Банк</button>
+                           </li>
+                           <li>
+                               <button  id="elsom">Элсом</button>
+                           </li>
+                           
+                   </ol>
+               </li>
+               <li class="drop">
+                   <i class="fa fa-user" ></i>  
+    
+                Контрагент
+                    <ol>
+                        <li>
+                            <button id="ali">Али</button>
+                        </li>
+                        <li>
+                            <button  id="no">Без контрагента</button>
+                        </li>
+                    </ol>
+             </li>
+                </ul>
+            </article>
+            <section class="main_journal">
+                <div class="journal">
+                    <div id="container">
+                        <div class="tbl-header">
+                            <table >
+                                <thead>
+                                     <tr>
+                                        <th scope="col">Дата  <i class="fa fa-calendar"	></i></th>
+                                        <th scope="col">Тип </th>
+                                        <th scope="col">Сумма <i class="fa fa-dollar"></i></th>
+                                        <th scope="col">Счет</th>
+                                        <th scope="col">Контрагент </th>
+                                        <th scope="col">Категория</th>
+                                        <th scope="col">Проект</th>
+                                    </tr>
+                                </thead>
+                                 <tbody class="tbody"></tbody>	
+                           </table>
+                    </div>
+                    <nav aria-label="..." class="mt-4 ">
+                        <ul class="pagination pagination-md justify-content-center">
+                            <li class="page-item  " aria-current="page">
+                                <a href class="page-link " id="prev">
+                                <i class="fa fa-arrow-left"></i>
+                                <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" id="currentPage" >
+                                1</a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link" href="#" id="next"><i class="fa fa-arrow-right 2"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+            </div>
 </section>  
 </div>
 <div class="dohod_cont">

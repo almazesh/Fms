@@ -1,7 +1,7 @@
 const plusBtn = document.querySelector('#plus');
 plusBtn.addEventListener('click', e =>{
 	e.preventDefault();
-	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=7', {
 		method: 'GET',
 		headers: {
 			'Authorization': `Token ${localStorage.getItem('neobisToken')}`
@@ -15,6 +15,7 @@ plusBtn.addEventListener('click', e =>{
 			if(item.type === "Доход"){
 				console.log(item);
 				frag += card;
+				
 			}
 		})
 		document.querySelector('.tbody').innerHTML = frag;
@@ -65,7 +66,7 @@ perevod.addEventListener('click',ev=>{
 	const allBtn = document.querySelector('#all');
 	allBtn.addEventListener('click',ec=>{
 		ec.preventDefault();
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=7', {
 			method: 'GET',
 			headers: {
 				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
@@ -164,7 +165,7 @@ perevod.addEventListener('click',ev=>{
 			let frags = '';
 			v['results'].forEach(items=>{
 				let cards = cardTemplate(items);
-					if(items.counterparty === "No partner"){
+					if(items.counterparty === "Без контрагента"){
 						frags += cards;
 					}
 			})

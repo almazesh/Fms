@@ -55,7 +55,12 @@ next.addEventListener('click',j=>{
         pageCounter = dataCount - 1;
     }
     j.preventDefault();
-    fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`)
+    fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`,{
+        method:'get',
+        headers:{
+            'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+        }
+    })
     .then(u => u.json())
     .then(h =>{
         let temp = '';

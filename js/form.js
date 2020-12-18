@@ -61,12 +61,3 @@ if(localStorage.getItem('neobisToken')){
 
 
 // HEader token
-
-let url = 'http://neobisfms.herokuapp.com/api/transactions/';
-let head = new Headers();
-head.append('Accept', 'application/json')
-let req = new Request(url,{
-    method:'get',
-    headers:head,
-    mode:'cors'
-})

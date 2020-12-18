@@ -14,21 +14,24 @@ function Toggle() {
    })
   
    function cardTemplate(card){
-   if(card.counterparty == null){
-       card.counterparty = '-'
+   if(card.counterparty == 'No partner'){
+       card.counterparty = 'Без контрагента'
    }				
-   if(card.projects == null){
-       card.projects = '-'
+   if(card.projects == 'No project'){
+       card.projects = 'Без проекта'
    }
-   if(card.categoryincome == null){
-       card.categoryincome = '-'
+   if(card.categoryincome == 'No category'){
+       card.categoryincome = 'Без категории'
    }
    if(card.type == 'Income'){
        card.type = 'Доход'
+       
+       
    }
+
    if(card.type == 'Expense'){
        card.type = 'Расход'
-   
+
    }
    
    if(card.type == 'Transfer'){
@@ -37,10 +40,14 @@ function Toggle() {
    if(card.amount == card.amount){
        card.amount = card.amount + ' ' +  'KGS';
    }
+  if(card.accounts == 'Elsom'){
+      card.accounts == 'Элсом'
+  }
+
    return `
    <tr>
        <td scope="row">${card.date}</td>
-       <td data-title="Тип">${card.type}</td>
+       <td data-title="Тип" >${card.type}</td>
        <td data-title="Сумма">${card.amount}</td>
        <td data-title="Счет" data-type="currency">${card.accounts}</td>
        <td data-title="Контрагент" data-type="currency">${card.counterparty}</td>
@@ -72,7 +79,7 @@ function Toggle() {
        return `
            <li class="mt-4">Общий доход: ${tr.totalincome}</li>
            <li class="mt-4">Общий расход: ${tr.totalexpense}</li>
-           <li class="mt-4">Общий перевод: ${tr.totalamount}</li>
+           <li class="mt-4">Общий баланс: ${tr.totalamount}</li>
        `
    }
    
@@ -119,8 +126,8 @@ form_opt.addEventListener('click',er=>{
     er.preventDefault();
     console.log(opt_email.value)
     const objects = {
-        emails:'fin.mng.system1@gmail.com',
-        passwords:'SaniraAdmin' 
+        emails: 'fin.mng.system1@gmail.com',
+        passwords: 'SaniraAdmin' 
     }
     if(opt_email.value === objects.emails && opt_pssw.value === objects.passwords){
         window.open('options/index.html','_self');
