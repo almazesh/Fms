@@ -36,10 +36,3 @@ form.addEventListener('submit',e=>{
     })
 })
 
-
-
-
-
-fetch('http://neobisfms.herokuapp.com/api/user/register/')
-.then(res =>res.json())
-.then(r => console.log(r))

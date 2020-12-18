@@ -6,7 +6,7 @@ let dataCount;
 fetch(`http://neobisfms.herokuapp.com/api/transactions/?limit=5&offset=${pageCounter}`, {
     method: 'GET',
     headers: {
-        'Token': '5509e8825b45fc4fb14e6a07e0e9398af9c66cf1'
+        'Authorization': `Token ${localStorage.getItem('neobisToken')}`
     }
 })
 .then(content => content.json())

@@ -9,7 +9,8 @@ form.addEventListener('submit',e=>{
     fetch('http://neobisfms.herokuapp.com/api/transfer/',{
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': `Token ${localStorage.getItem('neobisToken')}`
         },
         body:JSON.stringify({
             date:data.value,
@@ -33,7 +34,12 @@ form.addEventListener('submit',e=>{
             console.err(err);
         })
 })
-fetch('http://neobisfms.herokuapp.com/api/data/accounts/')
+fetch('http://neobisfms.herokuapp.com/api/data/accounts/', {
+    method: 'GET', 
+    headers: {
+        'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+    }
+})
 .then(res => res.json())
 .then(h=>{
     console.log(h);

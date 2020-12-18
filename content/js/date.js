@@ -9,7 +9,7 @@ data.addEventListener('click',y=>{
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'Token': '5509e8825b45fc4fb14e6a07e0e9398af9c66cf1'
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
 			}
 		})
 		.then(hopess => hopess.json())

@@ -5,7 +5,8 @@ add_name.addEventListener('click',e=>{
     fetch('http://neobisfms.herokuapp.com/api/data/partner/',{
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': `Token ${localStorage.getItem('neobisToken')}`
         },
         body:JSON.stringify({
             name:name.value
@@ -27,7 +28,8 @@ add_acc.addEventListener('click',e=>{
     fetch('http://neobisfms.herokuapp.com/api/data/accounts/',{
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': `Token ${localStorage.getItem('neobisToken')}`
         },
         body:JSON.stringify({
             type:accounts.value
@@ -50,7 +52,8 @@ add_income.addEventListener('click',e=>{
     fetch('http://neobisfms.herokuapp.com/api/income/categoryofincome/',{
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': `Token ${localStorage.getItem('neobisToken')}`
         },
         body:JSON.stringify({
             name:income.value
@@ -73,7 +76,8 @@ add_expense.addEventListener('click',e=>{
     fetch('http://neobisfms.herokuapp.com/api/expense/categoryofexpense/',{
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': `Token ${localStorage.getItem('neobisToken')}`
         },
         body:JSON.stringify({
             name:expense.value
@@ -95,7 +99,8 @@ add_project.addEventListener('click',e=>{
     fetch('http://neobisfms.herokuapp.com/api/data/projects/',{
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': `Token ${localStorage.getItem('neobisToken')}`
         },
         body:JSON.stringify({
             name:project.value

@@ -1,7 +1,12 @@
 const plusBtn = document.querySelector('#plus');
 plusBtn.addEventListener('click', e =>{
 	e.preventDefault();
-	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+		method: 'GET',
+		headers: {
+			'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+		}
+	})
 	.then(res => res.json())
 	.then(r => {
 		let frag = '';
@@ -18,7 +23,12 @@ plusBtn.addEventListener('click', e =>{
 const minusBtn = document.querySelector('#minus');
 minusBtn.addEventListener('click',ev=>{
 	ev.preventDefault();
-	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+		method: 'GET',
+		headers: {
+			'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+		}
+	})
 	.then(hope => hope.json())
 	.then(v =>{
 		let frags = '';
@@ -34,7 +44,12 @@ minusBtn.addEventListener('click',ev=>{
 const perevod = document.querySelector('#perevod');
 perevod.addEventListener('click',ev=>{
 	ev.preventDefault();
-	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+	fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+		method: 'GET',
+		headers: {
+			'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+		}
+	})
 	.then(hope => hope.json())
 	.then(v =>{
 		let frags = '';
@@ -50,7 +65,12 @@ perevod.addEventListener('click',ev=>{
 	const allBtn = document.querySelector('#all');
 	allBtn.addEventListener('click',ec=>{
 		ec.preventDefault();
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+			}
+		})
 		.then(hopes => hopes.json())
 		.then(v =>{
 			let frags = '';
@@ -64,7 +84,12 @@ perevod.addEventListener('click',ev=>{
 	const demir = document.querySelector('#demir');
 	demir.addEventListener('click',ec=>{
 		ec.preventDefault();
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+			}
+		})
 		.then(hopes => hopes.json())
 		.then(v =>{
 			let frags = '';
@@ -80,7 +105,12 @@ perevod.addEventListener('click',ev=>{
 	const elsom = document.querySelector('#elsom');
 	elsom.addEventListener('click',ec=>{
 		ec.preventDefault();
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+			}
+		})
 		.then(hopes => hopes.json())
 		.then(v =>{
 			let frags = '';
@@ -100,7 +130,12 @@ perevod.addEventListener('click',ev=>{
 	const ali = document.querySelector('#ali');
 	ali.addEventListener('click',ec=>{
 		ec.preventDefault();
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+			}
+		})
 		.then(hopes => hopes.json())
 		.then(v =>{
 			let frags = '';
@@ -118,7 +153,12 @@ perevod.addEventListener('click',ev=>{
 	const no = document.querySelector('#no');
 	no.addEventListener('click',ec=>{
 		ec.preventDefault();
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20')
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+			}
+		})
 		.then(hopes => hopes.json())
 		.then(v =>{
 			let frags = '';

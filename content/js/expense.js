@@ -23,7 +23,8 @@ function Adds(){
         fetch('http://neobisfms.herokuapp.com/api/expense/',{
             method:'POST',
             headers:{
-               'Content-Type':'application/json'
+               'Content-Type':'application/json',
+               'Authorization': `Token ${localStorage.getItem('neobisToken')}`
             },
             body: JSON.stringify({
                 date:date.value,

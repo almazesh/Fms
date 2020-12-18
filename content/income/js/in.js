@@ -15,7 +15,8 @@ form.addEventListener('submit', e =>{
         fetch('http://neobisfms.herokuapp.com/api/income/',{
             method: 'POST',
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'Authorization': `Token ${localStorage.getItem('neobisToken')}`
             },
             body: JSON.stringify({
                 date:date.value,
@@ -46,7 +47,12 @@ form.addEventListener('submit', e =>{
 
 
 
-fetch('http://neobisfms.herokuapp.com/api/data/accounts/')
+fetch('http://neobisfms.herokuapp.com/api/data/accounts/', {
+    method: 'GET',
+    headers: {
+        'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+    }
+})
 .then(res => res.json())
 .then(h=>{
     console.log(h);
@@ -65,7 +71,12 @@ function Card(card){
 
     `
 }
-fetch('http://neobisfms.herokuapp.com/api/income/categoryofincome/')
+fetch('http://neobisfms.herokuapp.com/api/income/categoryofincome/', {
+    method: 'GET',
+    headers: {
+        'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+    }
+})
 .then(res => res.json())
 .then(l=>{
     console.log(l)
@@ -86,7 +97,12 @@ function Category(cards){
     `
 }
 
-fetch('http://neobisfms.herokuapp.com/api/data/partner/')
+fetch('http://neobisfms.herokuapp.com/api/data/partner/', {
+    method: 'GET',
+    headers: {
+        'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+    }
+})
 .then(tes => tes.json())
 .then(f=>{
     console.log(f)
@@ -99,7 +115,12 @@ fetch('http://neobisfms.herokuapp.com/api/data/partner/')
 })
 
 
-fetch('http://neobisfms.herokuapp.com/api/data/projects/')
+fetch('http://neobisfms.herokuapp.com/api/data/projects/', {
+    method: 'GET',
+    headers: {
+        'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+    }
+})
 .then(fre => fre.json())
 .then(j =>{
     console.log(j)

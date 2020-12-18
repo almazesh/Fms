@@ -55,7 +55,7 @@ function Toggle() {
    fetch('http://neobisfms.herokuapp.com/api/gettotal/', {
        method: 'GET',
        headers: {
-           'Token': '5509e8825b45fc4fb14e6a07e0e9398af9c66cf1'
+        'Authorization': `Token ${localStorage.getItem('neobisToken')}`
        }
    })
    .then(tr=> tr.json())
