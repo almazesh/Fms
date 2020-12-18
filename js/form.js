@@ -10,7 +10,7 @@ if(localStorage.getItem('neobisToken')){
 
 form.addEventListener('submit', e =>{
     e.preventDefault();
-    
+   
     fetch('http://neobisfms.herokuapp.com/api/user/login/', {
         method: 'POST',
         headers: {
@@ -18,7 +18,7 @@ form.addEventListener('submit', e =>{
         },
         body: JSON.stringify({
             email: email.value,
-            password: password.value
+            password: password.value,
         })
     })
     .then(res => res.json())
@@ -33,6 +33,7 @@ form.addEventListener('submit', e =>{
                 frag += card;
             })
             validateList.innerHTML = frag;
+            
         }else if(r.token){
             localStorage.setItem('neobisToken', r.token);
             window.open('./content/index.html', '_self');

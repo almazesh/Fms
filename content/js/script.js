@@ -112,4 +112,7 @@ form_opt.addEventListener('click',er=>{
     if(opt_email.value === objects.emails && opt_pssw.value === objects.passwords){
         window.open('options/index.html')
     }
+    else{
+        alert('Доступ только админу!')
+    }
 })

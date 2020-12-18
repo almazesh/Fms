@@ -8,7 +8,8 @@ section{
     justify-content: center;
 }
 aside{
-
+    border-left: 4px dashed white;
+    border-right: 4px dashed white;
     position:sticky;
     left: 0;
     top: 0;
@@ -58,4 +59,25 @@ aside{
       list-style:disc;
       color:  white;
       transition: 0.2s;
+  }
+
+  .add{
+      padding: 10px;
+      border:1px solid white;
+      border-radius: 5px;
+      background: #32B482;
+      color: white;
+  }
+  .center{
+      width: 80%;   
+      margin: 50px auto;
+      text-align: center;
+  }
+  .styles{
+      padding: 10px;
+      border-radius: 5px;
+      border:0;
+  }
+  .form-inline{
+      margin: 20px 0;
   }
