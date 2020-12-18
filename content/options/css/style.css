@@ -14,7 +14,7 @@ aside{
     left: 0;
     top: 0;
     width: 600px;
-    height: 100vh;
+    height:742px;
     background: #32B482;
     box-shadow: 0 5px 20px gainsboro;
 }
@@ -81,3 +81,13 @@ aside{
   .form-inline{
       margin: 20px 0;
   }
+.exit{
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+}
+.exit a{
+    color: white;
+    font-size: 20px;
+   
+}

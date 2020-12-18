@@ -92,7 +92,7 @@ const project = document.querySelector('.project');
 const add_project = document.querySelector('.add_project');
 add_project.addEventListener('click',e=>{
     e.preventDefault();
-    fetch('http://neobisfms.herokuapp.com/api/data/partner/',{
+    fetch('http://neobisfms.herokuapp.com/api/data/projects/',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -105,4 +105,11 @@ add_project.addEventListener('click',e=>{
     .then(g=>{
         console.log(g)
     })
+})
+
+
+const exit = document.querySelector('.exits');
+exit.addEventListener('click',t=>{
+    t.preventDefault();
+    window.open('../index.html','_self')
 })

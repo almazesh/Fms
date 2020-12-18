@@ -110,7 +110,8 @@ form_opt.addEventListener('click',er=>{
         passwords:'SaniraAdmin' 
     }
     if(opt_email.value === objects.emails && opt_pssw.value === objects.passwords){
-        window.open('options/index.html')
+        window.open('options/index.html','_self')
+        fc.style.top = '-250' + 'px';
     }
     else{
         alert('Доступ только админу!')
