@@ -117,7 +117,7 @@ perevod.addEventListener('click',ev=>{
 			let frags = '';
 			v['results'].forEach(items=>{
 				let cards = cardTemplate(items);
-					if(items.accounts === "Elsom"){
+					if(items.accounts === "Элсом"){
 						frags += cards;
 					}
 			})
