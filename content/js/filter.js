@@ -125,7 +125,48 @@ perevod.addEventListener('click',ev=>{
 		})
 	})
 
-	
+	const optima = document.querySelector('#optima');
+	optima.addEventListener('click',ec=>{
+		ec.preventDefault();
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+			}
+		})
+		.then(hopes => hopes.json())
+		.then(v =>{
+			let frags = '';
+			v['results'].forEach(items=>{
+				let cards = cardTemplate(items);
+					if(items.accounts === "Оптима"){
+						frags += cards;
+					}
+			})
+			document.querySelector('.tbody').innerHTML = frags;
+		})
+	})
+	const kicb = document.querySelector('#kicb');
+	kicb.addEventListener('click',ec=>{
+		ec.preventDefault();
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+			method: 'GET',
+			headers: {
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
+			}
+		})
+		.then(hopes => hopes.json())
+		.then(v =>{
+			let frags = '';
+			v['results'].forEach(items=>{
+				let cards = cardTemplate(items);
+					if(items.accounts === "КИСБ"){
+						frags += cards;
+					}
+			})
+			document.querySelector('.tbody').innerHTML = frags;
+		})
+	})
 	
 
 	const ali = document.querySelector('#ali');
