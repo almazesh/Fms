@@ -5,11 +5,11 @@ data.addEventListener('click',y=>{
 	const datapicker = document.getElementById('datepicker');
 	const datapicker2 = document.getElementById('datepicker1');
 	if(datapicker2.value !== "" && datapicker.value !== ""){
-		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=20', {
+		fetch('http://neobisfms.herokuapp.com/api/transactions/?limit=5', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': `Tokяen ${localStorage.getItem('neobisToken')}`
+				'Authorization': `Token ${localStorage.getItem('neobisToken')}`
 			}
 		})
 		.then(hopess => hopess.json())

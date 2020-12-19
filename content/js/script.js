@@ -41,8 +41,11 @@ function Toggle() {
        card.amount = card.amount + ' ' +  'KGS';
    }
   if(card.accounts == 'Elsom'){
-      card.accounts == 'Элсом'
+      card.accounts = 'Элсом'
   }
+  if(card.accounts == 'Optima'){
+    card.accounts = 'Оптима'
+}
 
    return `
    <tr>
